@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>This is Product Page</h1>
+<form action="{% url 'Search_Product' %}" method="GET">
+    <label for="product_search">Search :- </label>
+    <input type="text" name="product_name" id="search_product_id" placeholder="Product Name">
+    <input type="submit" value="Search">
+</form>
+
+<br><br>
+<table border="2">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product category</th>
+        <th>Product Manufacture Date</th>
+    </tr>
+    <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.manufacture_date}}</td>
+    </tr>    
+</table>
+{% endblock %}
